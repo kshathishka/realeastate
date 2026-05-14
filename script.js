@@ -28,20 +28,30 @@ const listings = [
   }
 ];
 
+const escapeHtml = (value) =>
+  String(value)
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#39;');
+
 const listingGrid = document.getElementById('listing-grid');
 
-listingGrid.innerHTML = listings
-  .map(
-    (listing) => `
-      <article class="listing-card">
-        <img src="${listing.image}" alt="${listing.title}" />
-        <div class="listing-card-content">
-          <h4>${listing.title}</h4>
-          <p>${listing.location}</p>
-          <p>${listing.beds} beds · ${listing.baths} baths · ${listing.area}</p>
-          <p class="price">${listing.price}</p>
-        </div>
-      </article>
-    `
-  )
-  .join('');
+if (listingGrid) {
+  listingGrid.innerHTML = listings
+    .map(
+      (listing) => `
+        <article class="listing-card">
+          <img src="${escapeHtml(listing.image)}" alt="${escapeHtml(listing.title)}" />
+          <div class="listing-card-content">
+            <h4>${escapeHtml(listing.title)}</h4>
+            <p>${escapeHtml(listing.location)}</p>
+            <p>${escapeHtml(listing.beds)} beds · ${escapeHtml(listing.baths)} baths · ${escapeHtml(listing.area)}</p>
+            <p class="price">${escapeHtml(listing.price)}</p>
+          </div>
+        </article>
+      `
+    )
+    .join('');
+}
