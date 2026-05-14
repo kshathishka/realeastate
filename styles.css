@@ -1,0 +1,135 @@
+:root {
+  color-scheme: light;
+  font-family: Inter, Arial, sans-serif;
+  --primary: #104f55;
+  --accent: #57cc99;
+  --surface: #f5fbfa;
+  --text: #1f2a2e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: white;
+}
+
+.container {
+  width: min(1100px, 92vw);
+  margin: 0 auto;
+}
+
+.site-header {
+  border-bottom: 1px solid #e4eceb;
+  background: white;
+  position: sticky;
+  top: 0;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.nav h1 {
+  margin: 0;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.nav a {
+  color: var(--text);
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: 600;
+}
+
+.hero {
+  background: linear-gradient(120deg, var(--surface), #e8f6f5);
+  padding: 2.5rem 0;
+}
+
+.hero-content {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  align-items: center;
+}
+
+.hero img {
+  width: 100%;
+  max-width: 420px;
+  justify-self: center;
+  border-radius: 0.5rem;
+}
+
+.tag {
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+.section {
+  padding: 2rem 0;
+}
+
+.section h3 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.listing-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.listing-card {
+  border: 1px solid #dce7e5;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.listing-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
+
+.listing-card-content {
+  padding: 0.9rem;
+}
+
+.price {
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.agents {
+  background: var(--surface);
+}
+
+.agent-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.agent-grid article {
+  background: white;
+  border-radius: 0.7rem;
+  padding: 1rem;
+  border: 1px solid #dce7e5;
+}
+
+.site-footer {
+  background: var(--primary);
+  color: #eefaf5;
+  padding: 1.5rem 0;
+}
